@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+* {
+    font-family: 'Roboto', sans-serif;
+}
+:root{
+    --press_Down: 0;
+    --press_Down_color: 0 5px gray;
+}
+.try_button{
+    animation: fadein .5s forwards;
+}
+.choices{
+    display: flex;
+}
+.Result{
+    margin-bottom: 35px;
+    font-size: 64px;
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    height: 100px;
+}
+.score{display: flex;
+justify-content: space-between;
+width: 350px;
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 12%;
+    align-items: center;
+    flex: 1;
+}
+.Rock_ball,.Paper_ball,.Scissors_ball{
+    border-radius: 50%;
+    padding: 10px 5px;
+    font-size: 15px;
+    height: 53px;
+    width: 63px;
+    text-align: center;
+    border: solid black 1px;
+    box-shadow:0 5px gray;
+    position: relative;
+}
+button{
+    margin: 1.5rem;
+    border-radius: 50%;
+    padding: 10px 5px;
+    font-size: 15px;
+    height: 75px;
+    width: 75px;
+    text-align: center;
+    box-shadow: var(--press_Down_color);
+    border: solid black 1px;
+    cursor: pointer;
+    transition: transform .1s linear;
+}
+.win_font{
+    color: rgba(218, 100, 22, 0.897);
+    text-shadow: 2px 2px rgba(211, 183, 23, 0.822);
+    animation: fadein .5s forwards;
+}
+.lose_font{
+    color: #0d7ce4ef;
+    text-shadow: 2px 2px rgb(23, 63, 241);
+    animation: fadein .5s forwards;
+}
+.draw_font{
+    color: rgba(51, 216, 29, 0.925);
+    text-shadow: 2px 2px rgb(203, 236, 18);
+    animation: fadein .5s forwards;
+}
+@keyframes fadein{
+    from{
+        opacity: 0;
+    }
+    50%{
+        opacity: 1;
+        transform: scale(1.5);
+    }
+    to{
+        transform: scale(1);
+    }
+}
+button:active{
+    --press_Down: translateY(6px);
+    --press_Down_color: 0 4px black;
+}
+button:hover{
+    transform: scale(1.1) translateY(var(--press_Down));
+}
+.Rock{
+    background-color: red;
+}
+.Rock_ball{
+    background-color: red;
+}
+.Paper{
+    background-color: green;
+}
+.Paper_ball{
+    background-color: green;
+}
+.Scissors{
+    background-color: aqua;
+}
+.Scissors_ball{
+    background-color: aqua;
+}
+.lose_animation_com{
+    animation: com_lose .7s;
+}
+@keyframes com_lose{
+    from{
+        transform: scale(2,0.5);
+        right: -600px;      
+    }
+    75%{
+        right: -80px;
+        transform: scale(.5,1.1);
+    }
+    to{
+        right: -800px; 
+        transform: scale(1,1);       
+    }
+}
+.win_animation_player{
+    animation: player_win .7s forwards;
+}
+@keyframes player_win{
+    from{
+        transform: scale(2,0.5);
+        left: -600px;
+    }
+    75%{
+        left: 120px;
+        transform: scale(.5,1.1);
+    }
+    to{
+        left: 0;
+        transform: scale(1.3);
+    }
+}
+.lose_animation_player{
+    animation: player_lose .7s ;
+}
+@keyframes player_lose{
+    from{
+        transform: scale(2,0.5);
+        left: -600px;
+    }
+    75%{
+        left: -80px;
+        transform: scale(.5,1.1);
+    }
+    to{
+        left: -800px;
+        transform: scale(1,1);
+    }   
+}
+.win_animation_com{
+    animation: com_win .7s forwards;
+}
+@keyframes com_win{
+    from{
+        transform: scale(2,0.5);
+        right: -600px;      
+    }
+    75%{
+        right: 120px;
+        transform: scale(.5,1.1);
+    }
+    to{
+        right: 0; 
+        transform: scale(1.3);       
+    }    
+}
+.draw_animation_left{
+    animation: draw_left .7s forwards;
+}
+@keyframes draw_left{
+    from{
+        transform: scale(2,0.5);
+        left: -600px;
+    }
+    75%{
+        left: 20px;
+        transform: scale(.5,1.1);
+    }
+    to{
+        left: -50px;
+        transform: scale(1.1);
+    }    
+}
+.draw_animation_right{
+    animation: draw_right .7s forwards;
+}
+@keyframes draw_right{
+    from{
+        transform: scale(2,0.5);
+        right: -600px;
+    }
+    75%{
+        right: 20px;
+        transform: scale(.5,1.1);
+    }
+    to{
+        right: -50px;
+        transform: scale(1.1);
+    }    
+}
